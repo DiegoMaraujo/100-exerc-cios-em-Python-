@@ -1,0 +1,39 @@
+# criar a pasta( new/Directory/nome exercicio108)
+# botão direito (new/python.file/nome moeda.py)
+# botão direito (new/python.file/nome teste.py)
+------------------------------------------------------
+# botão direito (new/python.file/nome moeda.py)
+
+def aumentar(preco = 0, taxa = 0):
+	res = preco + (preco * taxa/100)
+	return res
+
+def diminuir(preco= 0, taxa = 0):
+	res = preco - (preco * taxa/100)
+	return res
+
+def dobro(preco = 0):
+	res = preco * 2
+	return res
+
+
+def metade(preco = 0):
+	res = preco / 2
+	return res
+
+def moeda(preco = 0, moeda ='R$'):
+	return f'{moeda}{preco:>8.2f}'.replace('.',',')
+
+
+
+
+---------------------------------------------------------------------
+#botão direito (new/python.file/nome teste.py)
+
+from exercicio108 import moeda # importando os pacotes modulos
+
+p = float(input('digite o preço: R$'))
+print(f'A metade de {moeda.moeda(p)} é {moeda.moeda(moeda.dobro(p))}')
+print(f'A metade de {moeda.moeda(p)} é {moeda.moeda(moeda.metade(p))}')
+print(f'Aumentado 10 %, temos R${moeda.moeda(moeda.aumentar(p, 10))}')
+

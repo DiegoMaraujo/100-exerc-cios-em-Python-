@@ -1,0 +1,86 @@
+# criar a pasta( new/Directory/(nome) exercicio 112)
+# botão direito (new/python.Package/nome utilidadesCv.py)(__init__py)# Criando os pacotes
+----------------------------------------------------------------------------------------
+botão direito (new/python.Package/(nome moeda) __init__py)# Criando os pacotes
+	#(__init__py) função pacotes moeda 
+
+def aumentar(preco = 0, taxa = 0, formato=False):
+	res = preco + (preco * taxa/100)
+	return res if formato is False else moeda(res)
+
+def diminuir(preco= 0, taxa = 0, formato=False):
+	res = preco - (preco * taxa/100)
+	return res if formato is False else moeda(res)
+
+def dobro(preco = 0, formato=False):
+	res = preco * 2
+	return res if not formato else moeda(res)
+
+
+def metade(preco = 0, formato=False):
+	res = preco / 2
+	return res if not formato else moeda(res)
+
+def moeda(preco = 0, moeda ='R$'):
+	return f'{moeda}{preco:>.2f}'.replace('.',',')
+
+def resomo(preco=0, taxaa=10, taxar=5):
+	print('-'*30)
+	print('RESUMO DO VALOR '.center(30))
+	print('-'*30)
+	print('Preço analisado: \t{moeda(preco)}')
+	print('Dobro do preço: \t{dobro(preco, True)}')	
+	print('Metade do preço: \t{metade(preco, True)}')
+	print(f'{taxaa}% de aumento: \t{aumentar(preco, taxaa, True)}')
+	print(f'{taxar}% de redução: \t{diminuir(preco, taxar, True)}')			
+	print('-'*30)
+
+----------------------------------------------------------------------------------------
+
+botão direito (new/python.Package/(nome dado)  __init__py)(__init__py)# Criando os pacotes
+	#(__init__py) função pacotes dado
+
+def leiaDinheiro(msg)
+	valido = False
+	while not valido:
+		entrada = str(input(msg)).replace(',','.').strip() # convertendo dodas as , para e tirando os espaços.
+		if entrada.isalpha() or entrada == '':
+			print(f'\033[033mERRO: \"{entrada}\" é um preço invalido!\033[m')
+		else:
+			valido - true
+			return float(entrada)
+
+def leiaInt(msg)
+	ok = False
+	valor = 0
+	while True:
+		n = str(input(msg))
+		if n.isnumeric():
+			valor = int(n)
+			ok = True
+		else:
+			print('\033[0;31mERRO! Digite um numero inteiro Valido. \033[m')
+		if ok:
+			break
+	return valor
+
+
+
+---------------------------------------------------------------------
+
+(__init__py)#  pacotes utilidadesCv
+
+	from exercicio112.utilidadesCv import moeda, dado
+-----------------------------------------------------------
+# botão direito (new/python.file/nome teste.py)
+
+
+from exercicio112.utilidadesCv import moeda # inportando o pacote moeda
+from exercicio112.utilidadesCv import dado # inportando o pacote dado
+
+p =dado.leiaDinheiro('diegite o preço: R$))
+moeda.resumo(p, 40, 20)
+
+
+c =dado.leiaInt('diegite o preço: R$))
+moeda.resumo(c, 40, 20)

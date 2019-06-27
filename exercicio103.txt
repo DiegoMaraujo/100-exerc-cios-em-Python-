@@ -1,0 +1,20 @@
+def ficha(jog ='<desconhecido'>, gol=0):
+	print(f'O jogador{jog} fez {gol} gol(s) no campeonato. ')
+
+
+
+
+
+
+
+#programa principal
+n = str(input("Nome do Jogador "))
+g = str(input("Numero de Gols "))
+if g.isnumeric():# ver se é numero
+	g= int(g)
+else:
+	g = 0 
+if n.strip() == '': # Tira os espaços
+	ficha(gol=g)
+else:
+	ficha(n, g)
