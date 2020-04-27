@@ -1,0 +1,23 @@
+def leiaDinhero(msg):
+    valido = False
+    while not valido:
+        entrada = str(input(msg)).replace(',','.').strip()
+        if entrada.isalpha() or entrada == '':
+            print(f'\033[merro: \"{entrada}" é um preço invalido!\033[m')
+        else:
+            valido = True
+            return float(entrada)
+
+def leiaInt(msg):
+    ok = False
+    valor = 0
+    while True:
+        n= str(input(msg))
+        if n.isnumeric():
+            valor = int(n)
+            ok = True
+        else:
+            print(f'033[0;31merro! Digite um numero inteiro Valido. \033[m')
+        if ok:
+            break
+    return valor
